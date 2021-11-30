@@ -4,7 +4,7 @@ import "time"
 
 const (
 	// ConfigKey is config key in container
-	ConfigKey = "hade:config"
+	ConfigKey = "nice:config"
 )
 
 // Config 定义了配置文件服务，读取配置文件，支持点分割的路径读取

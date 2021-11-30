@@ -1,8 +1,8 @@
 package http
 
 import (
-	"github.com/gohade/hade/framework"
-	"github.com/gohade/hade/framework/gin"
+	"github.com/go-ddh/nice/framework"
+	"github.com/go-ddh/nice/framework/gin"
 )
 
 // NewHttpEngine 创建了一个绑定了路由的Web引擎

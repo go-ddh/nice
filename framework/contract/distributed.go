@@ -3,7 +3,7 @@ package contract
 import "time"
 
 // DistributedKey 定义字符串凭证
-const DistributedKey = "hade:distributed"
+const DistributedKey = "nice:distributed"
 
 // Distributed 分布式服务
 type Distributed interface {

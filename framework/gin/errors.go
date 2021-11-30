@@ -6,10 +6,9 @@ package gin
 
 import (
 	"fmt"
+	"github.com/go-ddh/nice/framework/gin/internal/json"
 	"reflect"
 	"strings"
-
-	"github.com/gin-gonic/gin/internal/json"
 )
 
 // ErrorType is an unsigned 64-bit error code as defined in the gin spec.

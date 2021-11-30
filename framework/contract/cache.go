@@ -2,11 +2,11 @@ package contract
 
 import (
 	"context"
-	"github.com/gohade/hade/framework"
+	"github.com/go-ddh/nice/framework"
 	"time"
 )
 
-const CacheKey = "hade:cache"
+const CacheKey = "nice:cache"
 
 // RememberFunc 缓存的Remember方法使用，Cache-Aside模式对应的对象生成方法
 type RememberFunc func(ctx context.Context, container framework.Container) (interface{}, error)

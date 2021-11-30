@@ -3,7 +3,7 @@ package foo
 import (
 	"fmt"
 
-	"github.com/gohade/hade/framework/cobra"
+	"github.com/go-ddh/nice/framework/cobra"
 )
 
 var FooCommand = &cobra.Command{

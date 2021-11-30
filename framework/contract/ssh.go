@@ -2,11 +2,11 @@ package contract
 
 import (
 	"fmt"
-	"github.com/gohade/hade/framework"
+	"github.com/go-ddh/nice/framework"
 	"golang.org/x/crypto/ssh"
 )
 
-const SSHKey = "hade:ssh"
+const SSHKey = "nice:ssh"
 
 // SSHOption 代表初始化的时候的选项
 type SSHOption func(container framework.Container, config *SSHConfig) error

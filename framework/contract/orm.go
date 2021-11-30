@@ -1,8 +1,8 @@
 package contract
 
 import (
+	"github.com/go-ddh/nice/framework"
 	"github.com/go-sql-driver/mysql"
-	"github.com/gohade/hade/framework"
 	"gorm.io/gorm"
 	"net"
 	"strconv"
@@ -10,7 +10,7 @@ import (
 )
 
 // ORMKey 代表 ORM的服务
-const ORMKey = "hade:orm"
+const ORMKey = "nice:orm"
 
 // ORMService 表示传入的参数
 type ORMService interface {

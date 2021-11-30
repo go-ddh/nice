@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-const TraceKey = "hade:trace"
+const TraceKey = "nice:trace"
 
 const (
 	TraceKeyTraceID  = "trace_id"

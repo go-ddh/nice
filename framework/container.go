@@ -47,7 +47,7 @@ func NewNiceContainer() *NiceContainer {
 
 // PrintProviders 输出服务容器中注册的关键字
 func (nice *NiceContainer) PrintProviders() []string {
-	ret := []string{}
+	var ret []string
 	for _, provider := range nice.providers {
 		name := provider.Name()
 

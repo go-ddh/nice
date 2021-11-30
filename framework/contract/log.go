@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-const LogKey = "hade:log"
+const LogKey = "nice:log"
 
 type LogLevel uint32
 

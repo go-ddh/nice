@@ -1,12 +1,12 @@
 package http
 
 import (
-	"github.com/gohade/hade/app/http/module/demo"
-	"github.com/gohade/hade/framework/contract"
-	"github.com/gohade/hade/framework/gin"
-	ginSwagger "github.com/gohade/hade/framework/middleware/gin-swagger"
-	"github.com/gohade/hade/framework/middleware/gin-swagger/swaggerFiles"
-	"github.com/gohade/hade/framework/middleware/static"
+	"github.com/go-ddh/nice/app/http/module/devops"
+	"github.com/go-ddh/nice/framework/contract"
+	"github.com/go-ddh/nice/framework/gin"
+	ginSwagger "github.com/go-ddh/nice/framework/middleware/gin-swagger"
+	"github.com/go-ddh/nice/framework/middleware/gin-swagger/swaggerFiles"
+	"github.com/go-ddh/nice/framework/middleware/static"
 )
 
 // Routes 绑定业务层路由
@@ -23,5 +23,5 @@ func Routes(r *gin.Engine) {
 	}
 
 	// 动态路由定义
-	demo.Register(r)
+	devops.Register(r)
 }

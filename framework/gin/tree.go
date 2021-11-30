@@ -6,12 +6,11 @@ package gin
 
 import (
 	"bytes"
+	"github.com/go-ddh/nice/framework/gin/internal/bytesconv"
 	"net/url"
 	"strings"
 	"unicode"
 	"unicode/utf8"
-
-	"github.com/gin-gonic/gin/internal/bytesconv"
 )
 
 var (

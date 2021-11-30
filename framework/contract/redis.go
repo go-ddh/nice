@@ -2,11 +2,11 @@ package contract
 
 import (
 	"fmt"
+	"github.com/go-ddh/nice/framework"
 	"github.com/go-redis/redis/v8"
-	"github.com/gohade/hade/framework"
 )
 
-const RedisKey = "hade:redis"
+const RedisKey = "nice:redis"
 
 // RedisOption 代表初始化的时候的选项
 type RedisOption func(container framework.Container, config *RedisConfig) error

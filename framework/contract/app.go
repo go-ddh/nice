@@ -1,7 +1,7 @@
 package contract
 
 // AppKey 定义字符串凭证
-const AppKey = "hade:app"
+const AppKey = "nice:app"
 
 // App 定义接口
 type App interface {

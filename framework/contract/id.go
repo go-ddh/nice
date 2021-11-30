@@ -1,6 +1,6 @@
 package contract
 
-const IDKey = "hade:id"
+const IDKey = "nice:id"
 
 type IDService interface {
 	NewID() string

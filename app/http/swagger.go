@@ -24,5 +24,5 @@
 package http
 
 import (
-	_ "github.com/gohade/hade/app/http/swagger"
+	_ "github.com/go-ddh/nice/app/http/swagger"
 )

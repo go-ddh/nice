@@ -1,9 +1,9 @@
 package console
 
 import (
-	"github.com/gohade/hade/framework"
-	"github.com/gohade/hade/framework/cobra"
-	"github.com/gohade/hade/framework/command"
+	"github.com/go-ddh/nice/framework"
+	"github.com/go-ddh/nice/framework/cobra"
+	"github.com/go-ddh/nice/framework/command"
 )
 
 // RunCommand  初始化根Command并运行
