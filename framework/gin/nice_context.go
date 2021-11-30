@@ -23,7 +23,7 @@ func (c *Context) MustMake(key string) interface{} {
 	return c.container.MustMake(key)
 }
 
-// MakeNew 实现makenew的封装
+// MakeNew 实现makeNew的封装
 func (c *Context) MakeNew(key string, params []interface{}) (interface{}, error) {
 	return c.container.MakeNew(key, params)
 }

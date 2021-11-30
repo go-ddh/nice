@@ -38,7 +38,7 @@ func (c *Command) AddDistributedCronCommand(serviceName string, spec string, cmd
 	ctx := root.Context()
 	cronCmd = *cmd
 	cronCmd.args = []string{}
-	cronCmd.SetParantNull()
+	cronCmd.SetParentNull()
 
 	// cron增加匿名函数
 	root.Cron.AddFunc(spec, func() {

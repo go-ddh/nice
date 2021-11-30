@@ -3,7 +3,6 @@ package main
 import (
 	"github.com/go-ddh/nice/app/console"
 	"github.com/go-ddh/nice/app/http"
-	"github.com/go-ddh/nice/app/provider/devops"
 	"github.com/go-ddh/nice/framework"
 	"github.com/go-ddh/nice/framework/provider/app"
 	"github.com/go-ddh/nice/framework/provider/cache"
@@ -23,7 +22,7 @@ func main() {
 	// 初始化服务容器
 	container := framework.NewNiceContainer()
 	// 绑定App服务提供者
-	container.Bind(&devops.OpsProvider{})
+	//container.Bind(&devops.OpsProvider{})
 	// 绑定App服务提供者
 	container.Bind(&app.NiceAppProvider{})
 	// 后续初始化需要绑定的服务提供者...

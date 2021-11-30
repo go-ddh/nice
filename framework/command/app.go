@@ -129,7 +129,7 @@ var appStartCommand = &cobra.Command{
 		// daemon 模式
 		if appDaemon {
 			// 创建一个Context
-			cntxt := &daemon.Context{
+			ctxt := &daemon.Context{
 				// 设置pid文件
 				PidFileName: serverPidFile,
 				PidFilePerm: 0664,
@@ -144,7 +144,7 @@ var appStartCommand = &cobra.Command{
 				Args: []string{"", "app", "start", "--daemon=true"},
 			}
 			// 启动子进程，d不为空表示当前是父进程，d为空表示当前是子进程
-			d, err := cntxt.Reborn()
+			d, err := ctxt.Reborn()
 			if err != nil {
 				return err
 			}
@@ -154,24 +154,24 @@ var appStartCommand = &cobra.Command{
 				fmt.Println("日志文件:", serverLogFile)
 				return nil
 			}
-			defer cntxt.Release()
+			defer ctxt.Release()
 			// 子进程执行真正的app启动操作
-			fmt.Println("deamon started")
-			//gspt.SetProcTitle("hade app")
+			fmt.Println("demon started")
+			//spot.SetProcTitle("nice app")
 			if err := startAppServe(server, container); err != nil {
 				fmt.Println(err)
 			}
 			return nil
 		}
 
-		// 非deamon模式，直接执行
+		// 非demon模式，直接执行
 		content := strconv.Itoa(os.Getpid())
 		fmt.Println("[PID]", content)
 		err := ioutil.WriteFile(serverPidFile, []byte(content), 0644)
 		if err != nil {
 			return err
 		}
-		gspt.SetProcTitle("hade app")
+		gspt.SetProcTitle("nice app")
 
 		fmt.Println("app serve url:", appAddress)
 		if err := startAppServe(server, container); err != nil {
