@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/fsnotify/fsnotify"
 	"github.com/go-ddh/nice/framework/contract"
+	"gopkg.in/yaml.v3"
 	"io/ioutil"
 	"log"
 	"os"
@@ -18,7 +19,6 @@ import (
 	"github.com/spf13/cast"
 
 	"github.com/pkg/errors"
-	"gopkg.in/yaml.v2"
 )
 
 // NiceConfig  表示nice框架的配置文件服务
