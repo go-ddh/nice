@@ -3,6 +3,7 @@ package demo
 import (
 	"github.com/go-ddh/nice/app/devops/middleware/auth"
 	demoService "github.com/go-ddh/nice/app/provider/demo"
+	"github.com/go-ddh/nice/framework/contract"
 	"github.com/go-ddh/nice/framework/gin"
 )
 
@@ -35,6 +36,8 @@ func NewOpsApi() *OpsApi {
 // @Success 200 array []UserDTO
 // @Router /demo/demo [get]
 func (api *OpsApi) Demo(c *gin.Context) {
+	logService := c.MustMake(contract.LogKey).(contract.Log)
+	logService.Debug(c, "测试", nil)
 	c.JSON(200, "this is demo for dev all")
 }
 

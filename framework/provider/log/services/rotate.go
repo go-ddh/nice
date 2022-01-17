@@ -10,7 +10,7 @@ import (
 	"github.com/go-ddh/nice/framework"
 	"github.com/go-ddh/nice/framework/contract"
 
-	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
+	rotateLogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/pkg/errors"
 )
 
@@ -57,32 +57,32 @@ func NewNiceRotateLog(params ...interface{}) (interface{}, error) {
 		dateFormat = configService.GetString("log.date_format")
 	}
 
-	linkName := rotatelogs.WithLinkName(filepath.Join(folder, file))
-	options := []rotatelogs.Option{linkName}
+	linkName := rotateLogs.WithLinkName(filepath.Join(folder, file))
+	options := []rotateLogs.Option{linkName}
 
 	// 从配置文件获取rotate_count信息
 	if configService.IsExist("log.rotate_count") {
 		rotateCount := configService.GetInt("log.rotate_count")
-		options = append(options, rotatelogs.WithRotationCount(uint(rotateCount)))
+		options = append(options, rotateLogs.WithRotationCount(uint(rotateCount)))
 	}
 
 	// 从配置文件获取rotate_size信息
 	if configService.IsExist("log.rotate_size") {
 		rotateSize := configService.GetInt("log.rotate_size")
-		options = append(options, rotatelogs.WithRotationSize(int64(rotateSize)))
+		options = append(options, rotateLogs.WithRotationSize(int64(rotateSize)))
 	}
 
 	// 从配置文件获取max_age信息
 	if configService.IsExist("log.max_age") {
 		if maxAgeParse, err := time.ParseDuration(configService.GetString("log.max_age")); err == nil {
-			options = append(options, rotatelogs.WithMaxAge(maxAgeParse))
+			options = append(options, rotateLogs.WithMaxAge(maxAgeParse))
 		}
 	}
 
 	// 从配置文件获取rotate_time信息
 	if configService.IsExist("log.rotate_time") {
 		if rotateTimeParse, err := time.ParseDuration(configService.GetString("log.rotate_time")); err == nil {
-			options = append(options, rotatelogs.WithRotationTime(rotateTimeParse))
+			options = append(options, rotateLogs.WithRotationTime(rotateTimeParse))
 		}
 	}
 
@@ -94,7 +94,7 @@ func NewNiceRotateLog(params ...interface{}) (interface{}, error) {
 	log.folder = folder
 	log.file = file
 
-	w, err := rotatelogs.New(fmt.Sprintf("%s.%s", filepath.Join(log.folder, log.file), dateFormat), options...)
+	w, err := rotateLogs.New(fmt.Sprintf("%s.%s", filepath.Join(log.folder, log.file), dateFormat), options...)
 	if err != nil {
 		return nil, errors.Wrap(err, "new rotates error")
 	}

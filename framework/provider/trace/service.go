@@ -76,7 +76,7 @@ func (t *NiceTraceService) NewTrace() *contract.TraceContext {
 	return tc
 }
 
-// ChildSpan instance a sub trace with new span id
+// StartSpan ChildSpan instance a sub trace with new span id
 func (t *NiceTraceService) StartSpan(tc *contract.TraceContext) *contract.TraceContext {
 	var childSpanID string
 	if t.spanIDGenerator != nil {
@@ -96,7 +96,7 @@ func (t *NiceTraceService) StartSpan(tc *contract.TraceContext) *contract.TraceC
 	return childSpan
 }
 
-// GetTrace By Http
+// ExtractHTTP GetTrace By Http
 func (t *NiceTraceService) ExtractHTTP(req *http.Request) *contract.TraceContext {
 	tc := &contract.TraceContext{}
 	tc.TraceID = req.Header.Get(contract.TraceKeyTraceID)
@@ -115,7 +115,7 @@ func (t *NiceTraceService) ExtractHTTP(req *http.Request) *contract.TraceContext
 	return tc
 }
 
-// Set Trace to Http
+// InjectHTTP Set Trace to Http
 func (t *NiceTraceService) InjectHTTP(req *http.Request, tc *contract.TraceContext) *http.Request {
 	req.Header.Add(contract.TraceKeyTraceID, tc.TraceID)
 	req.Header.Add(contract.TraceKeySpanID, tc.SpanID)

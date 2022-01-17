@@ -8,7 +8,6 @@ import (
 	"github.com/go-ddh/nice/framework/provider/app"
 	"github.com/go-ddh/nice/framework/provider/cache"
 	"github.com/go-ddh/nice/framework/provider/config"
-	"github.com/go-ddh/nice/framework/provider/distributed"
 	"github.com/go-ddh/nice/framework/provider/env"
 	"github.com/go-ddh/nice/framework/provider/id"
 	"github.com/go-ddh/nice/framework/provider/kernel"
@@ -29,7 +28,6 @@ func main() {
 	container.Bind(&app.NiceAppProvider{})
 	// 后续初始化需要绑定的服务提供者...
 	container.Bind(&env.NiceEnvProvider{})
-	container.Bind(&distributed.LocalDistributedProvider{})
 	container.Bind(&config.NiceConfigProvider{})
 	container.Bind(&id.NiceIDProvider{})
 	container.Bind(&trace.NiceTraceProvider{})
