@@ -90,7 +90,7 @@ func NewNiceConfig(params ...interface{}) (interface{}, error) {
 	envMaps := params[2].(map[string]string)
 
 	// 实例化
-	hadeConf := &NiceConfig{
+	niceConf := &NiceConfig{
 		c:        container,
 		folder:   envFolder,
 		envMaps:  envMaps,
@@ -103,7 +103,7 @@ func NewNiceConfig(params ...interface{}) (interface{}, error) {
 	// 检查文件夹是否存在
 	if _, err := os.Stat(envFolder); os.IsNotExist(err) {
 		// 这里修改成为不返回错误，是让new方法可以通过
-		return hadeConf, nil
+		return niceConf, nil
 		//return nil, errors.New("folder " + envFolder + " not exist: " + err.Error())
 	}
 
@@ -114,7 +114,7 @@ func NewNiceConfig(params ...interface{}) (interface{}, error) {
 	}
 	for _, file := range files {
 		fileName := file.Name()
-		err := hadeConf.loadConfigFile(envFolder, fileName)
+		err := niceConf.loadConfigFile(envFolder, fileName)
 		if err != nil {
 			log.Println(err)
 			continue
@@ -152,15 +152,15 @@ func NewNiceConfig(params ...interface{}) (interface{}, error) {
 
 					if ev.Op&fsnotify.Create == fsnotify.Create {
 						log.Println("创建文件 : ", ev.Name)
-						hadeConf.loadConfigFile(folder, fileName)
+						niceConf.loadConfigFile(folder, fileName)
 					}
 					if ev.Op&fsnotify.Write == fsnotify.Write {
 						log.Println("写入文件 : ", ev.Name)
-						hadeConf.loadConfigFile(folder, fileName)
+						niceConf.loadConfigFile(folder, fileName)
 					}
 					if ev.Op&fsnotify.Remove == fsnotify.Remove {
 						log.Println("删除文件 : ", ev.Name)
-						hadeConf.removeConfigFile(folder, fileName)
+						niceConf.removeConfigFile(folder, fileName)
 					}
 				}
 			case err := <-watch.Errors:
@@ -172,7 +172,7 @@ func NewNiceConfig(params ...interface{}) (interface{}, error) {
 		}
 	}()
 
-	return hadeConf, nil
+	return niceConf, nil
 }
 
 // replace 表示使用环境变量maps替换context中的env(xxx)的环境变量

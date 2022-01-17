@@ -16,9 +16,9 @@ func TestNiceService_Load(t *testing.T) {
 	container.Bind(&log.NiceLogServiceProvider{})
 
 	Convey("test get client", t, func() {
-		hadeRedis, err := NewNiceRedis(container)
+		niceRedis, err := NewNiceRedis(container)
 		So(err, ShouldBeNil)
-		service, ok := hadeRedis.(*NiceRedis)
+		service, ok := niceRedis.(*NiceRedis)
 		So(ok, ShouldBeTrue)
 		client, err := service.GetClient(WithConfigPath("redis.write"))
 		So(err, ShouldBeNil)

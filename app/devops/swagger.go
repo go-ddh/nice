@@ -1,7 +1,7 @@
 // Package http API.
-// @title hade
+// @title nice
 // @version 1.1
-// @description hade测试
+// @description nice测试
 // @termsOfService https://github.com/swaggo/swag
 
 // @contact.name yejianfeng1
@@ -24,5 +24,5 @@
 package devops
 
 import (
-	_ "github.com/go-ddh/nice/app/http/swagger"
+	_ "github.com/go-ddh/nice/app/devops/swagger"
 )

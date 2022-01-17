@@ -14,9 +14,9 @@ func TestNiceSSHService_Load(t *testing.T) {
 	container.Bind(&log.NiceLogServiceProvider{})
 
 	Convey("test get client", t, func() {
-		hadeRedis, err := NewNiceSSH(container)
+		niceRedis, err := NewNiceSSH(container)
 		So(err, ShouldBeNil)
-		service, ok := hadeRedis.(*NiceSSH)
+		service, ok := niceRedis.(*NiceSSH)
 		So(ok, ShouldBeTrue)
 		client, err := service.GetClient(WithConfigPath("ssh.web-01"))
 		So(err, ShouldBeNil)

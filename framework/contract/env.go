@@ -2,11 +2,11 @@ package contract
 
 const (
 	// EnvProduction 代表生产环境
-	EnvProduction = "production"
+	EnvProduction = "prod"
 	// EnvTesting 代表测试环境
 	EnvTesting = "testing"
 	// EnvDevelopment 代表开发环境
-	EnvDevelopment = "development"
+	EnvDevelopment = "dev"
 
 	// EnvKey 是环境变量服务字符串凭证
 	EnvKey = "nice:env"

@@ -1,7 +1,7 @@
 package devops
 
 import (
-	"github.com/go-ddh/nice/app/http/module/devops"
+	"github.com/go-ddh/nice/app/devops/module/demo"
 	"github.com/go-ddh/nice/framework/contract"
 	"github.com/go-ddh/nice/framework/gin"
 	ginSwagger "github.com/go-ddh/nice/framework/middleware/gin-swagger"
@@ -23,5 +23,5 @@ func Routes(r *gin.Engine) {
 	}
 
 	// 动态路由定义
-	devops.Register(r)
+	demo.Register(r)
 }

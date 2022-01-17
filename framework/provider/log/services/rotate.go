@@ -45,7 +45,7 @@ func NewNiceRotateLog(params ...interface{}) (interface{}, error) {
 		os.MkdirAll(folder, os.ModePerm)
 	}
 
-	// 从配置文件中获取file信息，否则使用默认的hade.log
+	// 从配置文件中获取file信息，否则使用默认的nice.log
 	file := "nice.log"
 	if configService.IsExist("log.file") {
 		file = configService.GetString("log.file")

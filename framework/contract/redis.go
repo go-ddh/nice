@@ -17,7 +17,7 @@ type RedisService interface {
 	GetClient(option ...RedisOption) (*redis.Client, error)
 }
 
-// RedisConfig 为hade定义的Redis配置结构
+// RedisConfig 为nice定义的Redis配置结构
 type RedisConfig struct {
 	*redis.Options
 }

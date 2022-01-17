@@ -20,11 +20,11 @@ func PrettyPrint(arr [][]string) {
 		}
 	}
 
-	colMaxs := make([]int, cols)
+	colMas := make([]int, cols)
 	for j := 0; j < cols; j++ {
 		for i := 0; i < rows; i++ {
-			if colMaxs[j] < lens[i][j] {
-				colMaxs[j] = lens[i][j]
+			if colMas[j] < lens[i][j] {
+				colMas[j] = lens[i][j]
 			}
 		}
 	}
@@ -32,7 +32,7 @@ func PrettyPrint(arr [][]string) {
 	for i := 0; i < rows; i++ {
 		for j := 0; j < cols; j++ {
 			fmt.Print(arr[i][j])
-			padding := colMaxs[j] - lens[i][j] + 2
+			padding := colMas[j] - lens[i][j] + 2
 			for p := 0; p < padding; p++ {
 				fmt.Print(" ")
 			}

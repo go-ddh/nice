@@ -1,7 +1,7 @@
 package demo
 
 import (
-	devopsService "github.com/go-ddh/nice/app/provider/devops"
+	devopsService "github.com/go-ddh/nice/app/provider/demo"
 )
 
 func UserModelsToUserDTOs(models []UserModel) []UserDTO {

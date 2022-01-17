@@ -159,7 +159,7 @@ func (nice *NiceContainer) make(key string, params []interface{}, forceNew bool)
 
 // NameList 列出容器中所有服务提供者的字符串凭证
 func (nice *NiceContainer) NameList() []string {
-	ret := []string{}
+	var ret []string
 	for _, provider := range nice.providers {
 		name := provider.Name()
 		ret = append(ret, name)

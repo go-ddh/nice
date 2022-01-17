@@ -13,7 +13,7 @@ import (
 )
 
 func TestNiceConfig_Normal(t *testing.T) {
-	Convey("test hade config normal case", t, func() {
+	Convey("test nice config normal case", t, func() {
 		basePath := tests.BasePath
 		c := framework.NewNiceContainer()
 		c.Bind(&app.NiceAppProvider{BaseFolder: basePath})

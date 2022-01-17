@@ -9,7 +9,7 @@ import (
 
 // OrmLogger orm的日志实现类, 实现了gorm.Logger.Interface
 type OrmLogger struct {
-	logger contract.Log // 有一个logger对象存放hade的log服务
+	logger contract.Log // 有一个logger对象存放nice的log服务
 }
 
 // NewOrmLogger 初始化一个ormLogger,
@@ -17,7 +17,7 @@ func NewOrmLogger(logger contract.Log) *OrmLogger {
 	return &OrmLogger{logger: logger}
 }
 
-// LogMode 什么都不实现，日志级别完全依赖hade的日志定义
+// LogMode 什么都不实现，日志级别完全依赖nice的日志定义
 func (o *OrmLogger) LogMode(level logger.LogLevel) logger.Interface {
 	return o
 }

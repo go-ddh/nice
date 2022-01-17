@@ -10,7 +10,7 @@ type FakeConfigProvider struct {
 	Content  []byte
 }
 
-// Register registe a new function for make a service instance
+// Register register a new function for make a service instance
 func (provider *FakeConfigProvider) Register(c framework.Container) framework.NewInstance {
 	return NewFakeConfig
 }

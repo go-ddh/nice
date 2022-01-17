@@ -17,7 +17,7 @@ type SSHService interface {
 	GetClient(option ...SSHOption) (*ssh.Client, error)
 }
 
-// SSHConfig 为hade定义的SSH配置结构
+// SSHConfig 为nice定义的SSH配置结构
 type SSHConfig struct {
 	NetWork string
 	Host    string

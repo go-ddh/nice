@@ -8,7 +8,7 @@ import (
 
 type NiceConfigProvider struct{}
 
-// Register registe a new function for make a service instance
+// Register register a new function for make a service instance
 func (provider *NiceConfigProvider) Register(c framework.Container) framework.NewInstance {
 	return NewNiceConfig
 }

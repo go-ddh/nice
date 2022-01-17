@@ -13,7 +13,7 @@ import (
 func TestNiceConfig_GetInt(t *testing.T) {
 	container := tests.InitBaseContainer()
 
-	Convey("test hade env normal case", t, func() {
+	Convey("test nice env normal case", t, func() {
 		appService := container.MustMake(contract.AppKey).(contract.App)
 		envService := container.MustMake(contract.EnvKey).(contract.Env)
 		folder := filepath.Join(appService.ConfigFolder(), envService.AppEnv())

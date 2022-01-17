@@ -8,7 +8,7 @@ import (
 	"sync"
 )
 
-// NiceSSH 代表hade框架的ssh实现
+// NiceSSH 代表nice框架的ssh实现
 type NiceSSH struct {
 	container framework.Container    // 服务容器
 	clients   map[string]*ssh.Client // key为uniqKey, value为ssh.Client(连接池）
