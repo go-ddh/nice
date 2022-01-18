@@ -5,7 +5,7 @@ import (
 	"github.com/go-ddh/nice/framework/gin"
 )
 
-// recovery机制，将协程中的函数异常进行捕获
+// Trace recovery机制，将协程中的函数异常进行捕获
 func Trace() gin.HandlerFunc {
 	// 使用函数回调
 	return func(c *gin.Context) {

@@ -1,4 +1,4 @@
-// Copyright 2021 jianfengye.  All rights reserved.
+// Package middleware Copyright 2021 jianfengye.  All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file.
 package middleware
@@ -10,7 +10,7 @@ import (
 	"github.com/go-ddh/nice/framework/gin"
 )
 
-// recovery机制，将协程中的函数异常进行捕获
+// Cost recovery机制，将协程中的函数异常进行捕获
 func Cost() gin.HandlerFunc {
 	// 使用函数回调
 	return func(c *gin.Context) {

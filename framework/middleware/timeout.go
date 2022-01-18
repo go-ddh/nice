@@ -1,4 +1,4 @@
-// Copyright 2021 jianfengye.  All rights reserved.
+// Package middleware Copyright 2021 jianfengye.  All rights reserved.
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file.
 package middleware
@@ -35,12 +35,12 @@ func Timeout(d time.Duration) gin.HandlerFunc {
 		// 执行业务逻辑后操作
 		select {
 		case p := <-panicChan:
-			c.ISetStatus(500).IJson("time out")
+			c.DSetStatus(500).DJson("time out")
 			log.Println(p)
 		case <-finish:
 			fmt.Println("finish")
 		case <-durationCtx.Done():
-			c.ISetStatus(500).IJson("time out")
+			c.DSetStatus(500).DJson("time out")
 		}
 	}
 }
